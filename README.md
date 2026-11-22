@@ -71,3 +71,5 @@ The result is `out/game/index.html`, four images under `out/screenshots/`, and `
 | `screenshots/` | Four existing real screenshots, preserved unchanged |
 
 The existing screenshot files are retained as supplied. `?shot=start`, `?shot=play`, `?shot=chase`, and `?shot=end` select the corresponding preview scenes; `seed=1` selects the repeatable scene seed.
+
+The chase preview starts at wanted level 4.

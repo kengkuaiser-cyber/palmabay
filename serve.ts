@@ -1,3 +1,4 @@
+// Preview entry point: serves only game/ over loopback HTTP (GET and HEAD).
 // A dependency-free local preview server for the gta6-01 kit layout.
 // Run `node serve.ts` and open http://localhost:8080; optional: --port 8081.
 import { createReadStream, realpathSync, statSync } from 'node:fs';

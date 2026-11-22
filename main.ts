@@ -1,3 +1,4 @@
+// Build entry point: copies game/ and screenshots/ and writes dossier.json.
 // Palma Bay: a self-contained, offline open-world crime game in game/index.html.
 // This is the gta6-01 starter's packaging logic, with its original dossier limits.
 // Run `node serve.ts` to play locally at http://localhost:8080.

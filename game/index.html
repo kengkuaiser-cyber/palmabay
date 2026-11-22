@@ -1,3 +1,4 @@
+<!-- Palma Bay v2: standalone coastal city game. -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -133,7 +134,7 @@ $('new').onclick=()=>newGame(false);$('continue').onclick=()=>newGame(true);$('p
 const shot=new URLSearchParams(location.search).get('shot')||'';
 createCity();state=fresh();populate();resize();cam={x:850,y:600};if(loadSave()){$('continue').classList.remove('hidden');$('new').className='secondary';}
 // Scene previews use the same world and rendering; they never write a real save.
-if(['play','chase','end'].includes(shot)){newGame(false);const c=state.cars[0];state.player.x=c.x;state.player.y=c.y;interact();if(shot==='play'){c.x=630;c.y=910;c.angle=Math.PI/2;state.player.x=c.x;state.player.y=c.y;}if(shot==='chase'){c.x=1430;c.y=900;c.angle=-Math.PI/2;state.player.x=c.x;state.player.y=c.y;addWanted(3);for(let i=0;i<3;i++){spawnPolice();const unit=state.cars[state.cars.length-1];unit.x=1430+(i%2?26:-25);unit.y=1020+i*65;unit.angle=-Math.PI/2;}}if(shot==='end'){state.mission=3;state.money=1550;finish('win');}resize();updateUI();}
+if(['play','chase','end'].includes(shot)){newGame(false);const c=state.cars[0];state.player.x=c.x;state.player.y=c.y;interact();if(shot==='play'){c.x=630;c.y=910;c.angle=Math.PI/2;state.player.x=c.x;state.player.y=c.y;}if(shot==='chase'){c.x=1430;c.y=900;c.angle=-Math.PI/2;state.player.x=c.x;state.player.y=c.y;addWanted(4);for(let i=0;i<3;i++){spawnPolice();const unit=state.cars[state.cars.length-1];unit.x=1430+(i%2?26:-25);unit.y=1020+i*65;unit.angle=-Math.PI/2;}}if(shot==='end'){state.mission=3;state.money=1550;finish('win');}resize();updateUI();}
 window.PalmaBay={get state(){return state;},world:WORLD,locations:LOC,buildings,newGame,update,interact,fire,pause,saveGame,loadSave,addWanted,updateMission,updatePolice,finish,blocked,keys,mouse,saveKey:SAVE_KEY};
 function frame(t){const dt=Math.min(.05,(t-lastTime)/1000||0);lastTime=t;if(state.mode==='playing')update(dt);draw();requestAnimationFrame(frame);}requestAnimationFrame(frame);
 })();
