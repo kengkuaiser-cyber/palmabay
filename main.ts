@@ -1,16 +1,7 @@
-// Palma Bay — a gta6-01 entry (Node 22, standard library only): the game is this directory's
-// game/ folder, plain static files a desktop browser loads offline (game/index.html, a single
-// self-contained canvas game, no library and no network request), and the program hands it in.
-// It copies game/ and screenshots/ from beside this file to /output and writes
-// /output/dossier.json, the summary the judge reads, with the vendored make.fun library.
-// Palma Bay is an original top-down open-world crime game: a city to explore on foot and by car,
-// traffic and pedestrians, cars to steal, a wanted level with police who respond, 3 missions with
-// a story, combat, a HUD with a minimap, a start screen and a localStorage save. Screenshots live
-// in screenshots/ (the first by name is the cover); see shots.json for how each was staged.
-//
-// Serve it locally with `node serve.ts`, then open http://localhost:8080.
-// Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
-//   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+// Palma Bay: a self-contained, offline open-world crime game in game/index.html.
+// This is the gta6-01 starter's packaging logic, with its original dossier limits.
+// Run `node serve.ts` to play locally at http://localhost:8080.
+// Build to /output by default, or set MAKEFUN_OUTPUT_DIR to another directory.
 
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
